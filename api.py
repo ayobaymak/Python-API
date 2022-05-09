@@ -28,7 +28,7 @@ class StudentsList(Resource):
     student_id = '%i' % student_id
     STUDENTS[student_id] = {
       "name": args["name"],
-      "age": args["age"],
+      "age" : args["age"],
       "spec": args["spec"],
     }
     return STUDENTS[student_id], 201
