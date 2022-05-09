@@ -20,9 +20,9 @@ class StudentsList(Resource):
     return STUDENTS
 
   def post(self):
-    parser.add_argument("name")
-    parser.add_argument("age")
-    parser.add_argument("spec")
+    parser.add_argument("name", location='args')
+    parser.add_argument("age", type=int, location='args')
+    parser.add_argument("spec", location='args')
     args = parser.parse_args()
     student_id = int(max(STUDENTS.keys())) + 1
     student_id = '%i' % student_id
